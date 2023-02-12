@@ -1,13 +1,11 @@
-import {TestComponent} from "./components/TestComponent";
+import {CollectionGrid} from "./components/CollectionGrid";
+
 
 function App() {
 
     return (
-        <div className="App">
-
-            <p className="underline">
-                <TestComponent/>
-            </p>
+        <div className="font-bold">
+            <CollectionGrid/>
         </div>
     )
 }

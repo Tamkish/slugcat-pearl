@@ -1,4 +1,4 @@
-export const regionCodes= {
+export const regionCodes = {
     //vanilla
     Outskirts: "SU",
     DrainageSystem: "DS",
@@ -46,26 +46,30 @@ type RegionConnection = {
 }
 
 type CollectibleGridPosition = {
-    row: number,
-    col: number
+    row: number;
+    col: number;
 }
 
-type CollectibleReader = "WhiteMoon" | "Pebbles" | "BlueMoon";
+type CollectibleReader = "5P" | "Moon" | "MoonPC";
 
 type CollectibleType = "pearl" | "broadcast";
-export type Collectible =   Pearl | Broadcast ;
+export type Collectible = Pearl | Broadcast;
 
 type CollectibleBase = {
-    type: CollectibleType,
-    hexColor: string,
-    position:CollectibleGridPosition,
+    type: CollectibleType;
+    hexColor: string;
+    position: CollectibleGridPosition;
     roomName: string,
 }
 
 type Pearl = CollectibleBase & {
     type: "pearl";
-    slugcats : Slugcat[];
-    readers: CollectibleReader[];
+    slugcats: Slugcat[];
+    text: {
+        FP?: string[];
+        Moon?: string[];
+        MoonPC?: string[];
+    }
 }
 type Broadcast = CollectibleBase & {
     type: "broadcast"
