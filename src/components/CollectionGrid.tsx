@@ -1,38 +1,41 @@
 import '../index.css';
-import { allCollectibles, gridRange, numberOfRows, numberOfCols } from '../model/data/collectibles';
-import { Collectible } from '../model/types';
+import {allCollectibles, gridRange, getIndex} from '../model/data/collectibles';
+import {CollectionButton} from './CollectionButton';
+import {useParams} from "react-router-dom";
+import React from "react";
+import {CollectibleDisplay} from "./CollectibleDisplay";
 
 
 export const CollectionGrid = () => {
 
 
+    const {selectedId} = useParams();
+    const {reader} = useParams();
+    const isIdValid = !(isNaN(Number(selectedId)) || Number(selectedId) >= allCollectibles.length);
+    const id = isIdValid ? Number(selectedId) : null;
+    const selectedCollectible = allCollectibles[id ?? -1];
+
+
     return (
-        <div className={"border-white border-2 grid gap-4 grid-flow-row grid-cols-5 w-fit"} >
-            {
-                gridRange.rows.map(row =>
+        <div className={"flex flex-col min-h-screen"}>
+            <div className={"flex flex-row content-center justify-center"}>
 
-                    gridRange.cols.map(col => {
-
-
-                        const collectible = allCollectibles.find(c =>
-                            c.position.col == col &&
-                            c.position.row == row
+                <div
+                    className={`border-white border-2 font-bold grid gap-4 grid-flow-col grid-rows-[repeat(13,1fr)] w-fit rounded-2xl p-3 m-5 `}>
+                    {
+                        gridRange.cols.map(col =>
+                            gridRange.rows.map(row =>
+                                <CollectionButton
+                                    key={getIndex(row, col)}
+                                    index={getIndex(row, col)}
+                                    isSelected={selectedId == getIndex(row, col).toString()}
+                                />
+                            )
                         )
-
-
-                        return (
-                            <div key={row * numberOfRows + col}
-                                className={`${collectible == undefined ? "invisible" : ""} border-2 border-white h-7 w-7 rounded-lg text-center`}
-                                style={{ color: "#" + collectible?.hexColor }}
-                            >
-                                {collectible?.type == "pearl" ? "P" : "B"}
-                            </div>
-                        )
-
                     }
-                    )
-                )
-            }
-        </div >
+                </div>
+                <CollectibleDisplay collectibleId={id}/>
+            </div>
+        </div>
     )
 }

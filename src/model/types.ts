@@ -50,7 +50,8 @@ type CollectibleGridPosition = {
     col: number;
 }
 
-type CollectibleReader = "5P" | "Moon" | "MoonPC";
+
+
 
 type CollectibleType = "pearl" | "broadcast";
 export type Collectible = Pearl | Broadcast;
@@ -58,19 +59,25 @@ export type Collectible = Pearl | Broadcast;
 type CollectibleBase = {
     type: CollectibleType;
     hexColor: string;
-    position: CollectibleGridPosition;
     roomName: string,
 }
 
+
+
+
+export const readers : Reader[] = ["FP", "BSM", "LttM"]
+export type Reader = keyof PearlTexts;
+type PearlTexts = {
+    FP?: string[]; //five pebbles
+    BSM?: string[]; //moon before collapse (white)
+    LttM?: string[]; //moon after collapse (blue)
+}
 type Pearl = CollectibleBase & {
     type: "pearl";
     slugcats: Slugcat[];
-    text: {
-        FP?: string[];
-        Moon?: string[];
-        MoonPC?: string[];
-    }
+    text: PearlTexts;
 }
 type Broadcast = CollectibleBase & {
-    type: "broadcast"
+    type: "broadcast";
+    text: string[];
 }
