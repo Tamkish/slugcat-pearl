@@ -1,16 +1,17 @@
 import '../index.css';
-import {allCollectibles, gridRange, getIndex} from '../model/data/collectibles';
-import {CollectionButton} from './CollectionButton';
-import {useParams} from "react-router-dom";
+import { allCollectibles } from '../model/data/collectibles';
+import { CollectionButton } from './CollectionButton';
+import { useParams } from "react-router-dom";
 import React from "react";
-import {CollectibleDisplay} from "./CollectibleDisplay";
+import { CollectibleDisplay } from "./CollectibleDisplay";
+import { gridRange, getIndex } from '../model/types';
 
 
 export const CollectionGrid = () => {
 
 
-    const {selectedId} = useParams();
-    const {reader} = useParams();
+    const { selectedId } = useParams();
+    const { reader } = useParams();
     const isIdValid = !(isNaN(Number(selectedId)) || Number(selectedId) >= allCollectibles.length);
     const id = isIdValid ? Number(selectedId) : null;
     const selectedCollectible = allCollectibles[id ?? -1];
@@ -34,7 +35,7 @@ export const CollectionGrid = () => {
                         )
                     }
                 </div>
-                <CollectibleDisplay collectibleId={id}/>
+                <CollectibleDisplay collectibleId={id} />
             </div>
         </div>
     )

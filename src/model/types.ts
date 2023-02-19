@@ -58,14 +58,15 @@ export type Collectible = Pearl | Broadcast;
 
 type CollectibleBase = {
     type: CollectibleType;
+    nameColor: string;
     hexColor: string;
-    roomName: string,
+    roomName: string;
 }
 
 
 
 
-export const readers : Reader[] = ["FP", "BSM", "LttM"]
+export const readers: Reader[] = ["FP", "BSM", "LttM"]
 export type Reader = keyof PearlTexts;
 type PearlTexts = {
     FP?: string[]; //five pebbles
@@ -81,3 +82,25 @@ type Broadcast = CollectibleBase & {
     type: "broadcast";
     text: string[];
 }
+
+export const numberOfRows = 13;
+export const numberOfCols = 5;
+
+/// 1, 2, ... numberOfRows/Cols
+export const gridRange = {
+    rows: [...Array(numberOfRows).keys()],
+    cols: [...Array(numberOfCols).keys()],
+} as const;
+
+export const getIndex = (row: number, col: number) => col * numberOfRows + row;
+export const getAvailableSlugcats = (collectible: Collectible) => {
+    if (collectible.type == "pearl") {
+        return collectible.slugcats;
+    } else {
+        return [
+            "spearmaster"
+        ];
+    }
+}
+export const STOMACH = "stomach";
+export const PLACEHOLDER = "PLACEHOLDER";

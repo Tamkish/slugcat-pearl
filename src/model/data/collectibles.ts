@@ -1,32 +1,13 @@
-import {Collectible} from '../types';
+import { Collectible, PLACEHOLDER, STOMACH } from '../types';
 
 
-export const numberOfRows = 13;
-export const numberOfCols = 5;
 
-/// 1, 2, ... numberOfRows/Cols
-export const gridRange = {
-    rows: [...Array(numberOfRows).keys()],
-    cols: [...Array(numberOfCols).keys()],
-} as const;
-
-export const getIndex = (row: number, col: number) => col * numberOfRows + row;
-export const getAvailableSlugcats = (collectible: Collectible) => {
-    if (collectible.type == "pearl") {
-        return collectible.slugcats;
-    } else {
-        return [
-                    "spearmaster"
-                ];
-    }
-}
-export const STOMACH = "stomach";
-export const PLACEHOLDER = "PLACEHOLDER";
 
 export const allCollectibles: Collectible[] =
     [
         {
             type: "pearl",
+            nameColor: "Yellow",
             hexColor: "e9f452",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -46,6 +27,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Purple",
             hexColor: "9435ed",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -67,6 +49,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Magenta",
             hexColor: "ff1bb4",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -97,7 +80,8 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
-            hexColor: "0d422d",
+            nameColor: "Dark Green",
+            hexColor: "32644d",
             roomName: PLACEHOLDER,
             slugcats: [],
             text: {
@@ -129,7 +113,8 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
-            hexColor: "0d2d42",
+            nameColor: "Dark Blue",
+            hexColor: "355168",
             roomName: PLACEHOLDER,
             slugcats: [],
             text: {
@@ -159,7 +144,8 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
-            hexColor: "2d0d42",
+            nameColor: "Dark Purple",
+            hexColor: "5e3a73",
             roomName: PLACEHOLDER,
             slugcats: [],
             text: {
@@ -202,7 +188,8 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
-            hexColor: "2d420d",
+            nameColor: "Swampy Green",
+            hexColor: "546933",
             roomName: PLACEHOLDER,
             slugcats: [],
             text: {
@@ -234,7 +221,8 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
-            hexColor: "420d2d",
+            nameColor: "Dark Fuchsia 1",
+            hexColor: "67304f",
             roomName: PLACEHOLDER,
             slugcats: [],
             text: {
@@ -260,7 +248,8 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
-            hexColor: "420d2d",
+            nameColor: "Dark Fuchsia 2",
+            hexColor: "67304f",
             roomName: PLACEHOLDER,
             slugcats: [],
             text: {
@@ -279,6 +268,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Pale Blue",
             hexColor: "93a8e9",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -297,6 +287,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Blue",
             hexColor: "225bff",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -317,6 +308,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Turquoise",
             hexColor: "20c68f",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -349,6 +341,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Puke Yellow",
             hexColor: "d7e861",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -370,6 +363,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Green",
             hexColor: "26be3c",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -393,6 +387,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Dark Pink",
             hexColor: "851451",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -417,6 +412,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Gold",
             hexColor: "f2cc19",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -448,6 +444,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Violet",
             hexColor: "c30df5",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -468,6 +465,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Ashy Green",
             hexColor: "7da47d",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -495,6 +493,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Red",
             hexColor: "ff3c3c",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -521,6 +520,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Fuchsia",
             hexColor: "ff2667",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -550,6 +550,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Teal",
             hexColor: "3c9393",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -573,6 +574,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Pale Pink",
             hexColor: "ffc9e9",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -593,6 +595,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Lavender",
             hexColor: "ffc9e9",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -610,6 +613,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Deep Green",
             hexColor: "267d2a",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -634,6 +638,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Brown",
             hexColor: "c26600",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -653,6 +658,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Sad Boi Color",
             hexColor: "b02ffb",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -674,6 +680,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Aquamarine",
             hexColor: "99ffe5",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -691,6 +698,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Yellow 2",
             hexColor: "f6ee53",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -713,6 +721,7 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "pearl",
+            nameColor: "Dark Red",
             hexColor: "7e020a",
             roomName: PLACEHOLDER,
             slugcats: [],
@@ -722,10 +731,11 @@ export const allCollectibles: Collectible[] =
 
         {
             type: "pearl",
+            nameColor: "Pale Green",
             hexColor: "a6e3ae",
             slugcats: [
-                    "rivulet"
-                ],
+                "rivulet"
+            ],
             roomName: STOMACH,
             text: {
                 LttM:
@@ -742,215 +752,250 @@ export const allCollectibles: Collectible[] =
         },
         {
             type: "broadcast",
-            hexColor: "000000",
+            nameColor: "White 1",
+            hexColor: "ffffff",
             roomName: PLACEHOLDER,
             text:
                 []
         }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    }, {
-        type: "broadcast",
-        hexColor: "000000",
-        roomName: PLACEHOLDER,
-        text:
-            []
-    },
+            type: "broadcast",
+            nameColor: "White 2",
+            hexColor: "ffffff",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "White 3",
+            hexColor: "ffffff",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "White 4",
+            hexColor: "ffffff",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "White 5",
+            hexColor: "ffffff",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "White 6",
+            hexColor: "ffffff",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "White 7",
+            hexColor: "ffffff",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 1",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 2",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 2",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 3",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 4",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 5",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 6",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 7",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 9",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Grey 10",
+            hexColor: "7f7f7f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Pale Blue",
+            hexColor: "667ad1",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Green",
+            hexColor: "247d45",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Peach",
+            hexColor: "d48573",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Puke Yellow 1",
+            hexColor: "cce370",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Puke Yellow 2",
+            hexColor: "cce370",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Puke Yellow 3",
+            hexColor: "cce370",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Dark Purple",
+            hexColor: "593699",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Teal 1",
+            hexColor: "30bab2",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Teal 2",
+            hexColor: "30bab2",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Pink 1",
+            hexColor: "e8597f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Pink 2",
+            hexColor: "e8597f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Pink 3",
+            hexColor: "e8597f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Pink 4",
+            hexColor: "e8597f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Pink 5",
+            hexColor: "e8597f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Pink 6",
+            hexColor: "e8597f",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Brown",
+            hexColor: "9c5933",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Dark Blue 1",
+            hexColor: "184cdf",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        }, {
+            type: "broadcast",
+            nameColor: "Dark Blue 2",
+            hexColor: "184cdf",
+            roomName: PLACEHOLDER,
+            text:
+                []
+        },
 
     ];
 

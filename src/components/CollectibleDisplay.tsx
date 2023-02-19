@@ -1,31 +1,38 @@
-import React, {FC} from "react";
-import {Reader, readers} from "../model/types";
-import {allCollectibles, getAvailableSlugcats} from "../model/data/collectibles";
-import {NavLink, useParams} from "react-router-dom";
+import React, { FC } from "react";
+import { Reader, readers, getAvailableSlugcats } from '../model/types';
+import { allCollectibles } from "../model/data/collectibles";
+import { NavLink, useParams } from "react-router-dom";
 
 type CollectibleDisplayProps = {
     collectibleId: number | null;
 }
 
-export const CollectibleDisplay: FC<CollectibleDisplayProps> = ({collectibleId}: CollectibleDisplayProps) => {
+export const CollectibleDisplay: FC<CollectibleDisplayProps> = ({ collectibleId }: CollectibleDisplayProps) => {
 
     const collectible = allCollectibles[collectibleId ?? -1];
-    const {selectedReader} = useParams();
+    const { selectedReader } = useParams();
 
     return (
 
-        <div className={"border-white border-2 w-96 rounded-2xl m-5 "}>
+        <div className={"border-white border-2 rounded-2xl m-5 p-3 w-[750px] text-center"}>
             {
                 collectible == undefined
                     ?
-                    (<div>
+                    (<div className=" text-center">
                         No Pearl Selected
 
                     </div>)
                     :
                     (<div>
                         <div>
-
+                            <div
+                                style={{
+                                    color: "#" + collectible.hexColor,
+                                }}
+                                className="font-bold text-3xl"
+                            >
+                                {collectible.nameColor}
+                            </div>
                             <span>available for:</span>
                             {
                                 getAvailableSlugcats(collectible).map((slugcat) =>
