@@ -1,30 +1,36 @@
-import { FC } from "react";
-import { allCollectibles } from '../model/data/collectibles';
+import {FC} from "react";
+import {allCollectibles} from '../data/collectibles';
 import {NavLink} from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {faCircle, fas, faVolumeHigh} from "@fortawesome/free-solid-svg-icons";
+
+library.add(fas,faCircle,faVolumeHigh)
 
 type CollectionButtonProps = {
     index: number;
     isSelected: boolean;
 }
 
-export const CollectionButton: FC<CollectionButtonProps> = ({ index, isSelected }: CollectionButtonProps) => {
+export const CollectionButton: FC<CollectionButtonProps> = ({index, isSelected}: CollectionButtonProps) => {
 
     const collectible = allCollectibles.at(index);
-
-    const invisible = collectible == undefined ? "invisible" : "";
-    //console.log(collectible);
 
     return (
 
         <NavLink
-            className={`${invisible} border border-white h-7 w-7 rounded-lg text-center`}
+            className={`border border-white rounded-lg w-10 h-10`}
             style={{
                 color: "#" + collectible?.hexColor,
-                backgroundColor: isSelected? "gray":"black"
+                backgroundColor: isSelected ? "gray" : "black"
             }}
-         to={"/collection/"+index}>
+            to={"/collection/" + index}>
 
-            {collectible?.type == "pearl"?"P":"B"}
+            {
+                collectible?.type == "pearl"
+                    ? <FontAwesomeIcon icon={"circle"} />
+                    : <FontAwesomeIcon icon={"volume-high"}/>
+            }
         </NavLink>
     )
 }

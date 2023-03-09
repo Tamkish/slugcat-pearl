@@ -1,4 +1,4 @@
-import { Collectible, PLACEHOLDER, STOMACH } from '../types';
+import { Collectible, PLACEHOLDER, STOMACH } from '../model/types';
 
 
 

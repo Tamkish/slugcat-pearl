@@ -1,5 +1,5 @@
 import '../index.css';
-import { allCollectibles } from '../model/data/collectibles';
+import { allCollectibles } from '../data/collectibles';
 import { CollectionButton } from './CollectionButton';
 import { useParams } from "react-router-dom";
 import React from "react";

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Reader, readers, getAvailableSlugcats } from '../model/types';
-import { allCollectibles } from "../model/data/collectibles";
+import { allCollectibles } from "../data/collectibles";
 import { NavLink, useParams } from "react-router-dom";
 
 type CollectibleDisplayProps = {
@@ -14,7 +14,7 @@ export const CollectibleDisplay: FC<CollectibleDisplayProps> = ({ collectibleId 
 
     return (
 
-        <div className={"border-white border-2 rounded-2xl m-5 p-3 w-[750px] text-center"}>
+        <div className={"border-white border-2 rounded-2xl m-5 p-3 w-[800px] text-center"}>
             {
                 collectible == undefined
                     ?
@@ -68,7 +68,7 @@ export const CollectibleDisplay: FC<CollectibleDisplayProps> = ({ collectibleId 
                                         </div>
                                         {
                                             collectible.text[selectedReader as Reader]?.map((line, index) =>
-                                                <div key={index}>
+                                                <div key={index} className={"m-3"}>
                                                     {line}
                                                 </div>
                                             )

@@ -1,58 +1,39 @@
-export const regionCodes = {
+/*export const regionCodes = {
     //vanilla
     Outskirts: "SU",
-    DrainageSystem: "DS",
-    IndustrialComplex: "HI",
-    GarbageWastes: "GW",
+    Drainage: "DS",
+    Industrial: "HI",
+    Garbage: "GW",
     Shoreline: "SL",
-    ShadedCitadel: "SH",
-    TheExterior: "UW",
+    Shaded: "SH",
+    Exterior: "UW",
     FivePebbles: "SS",
-    ChimneyCanopy: "CC",
+    Chimney: "CC",
     SkyIslands: "SI",
-    FarmArrays: "LF",
+    Farms: "LF",
     Subterranean: "SB",
 
     //downpour
     Pipeyard: "VS",
     OuterExpanse: "OE",
     Metropolis: "LC",
-    TheRot: "RM",
-    SubmergedStructure: "MS", //shortened (Superstructure)
-    WaterfrontFacility: "LM",
-    LooksToTheMoon: "DM",
+    Rot: "RM",
+    Submerged: "MS", //shortened (Superstructure)
+    Waterfront: "LM",
+    LttM: "DM",
     Undergrowth: "UG",
-    SilentConstruct: "CL",
+    Silent: "CL",
     Rubicon: "HR",
-} as const;
-export type RegionCode = typeof regionCodes[keyof typeof regionCodes]; // "SU" | "DS" | ...
-type Region = {
+} as const;*//*
+
+export type RegionCode = typeof regionCodes[keyof typeof regionCodes]; // "SU" | "DS" | ...*/
+/*type Region = {
     code: RegionCode;
     regionConnections: RegionConnection[];
-}
+}*/
 
-export type Slugcat = "survivor" | "monk" | "hunter" | "gourmand" | "artificer" | "rivulet" | "spearmaster" | "saint";
-
-
-type KarmaGate = {
-    leftKarma: number;
-    rightKarma: number;
-}
-
-type RegionConnection = {
-    leftRegion: RegionCode;
-    rightRegion: RegionCode;
-    KarmaGate?: KarmaGate;
-}
-
-type CollectibleGridPosition = {
-    row: number;
-    col: number;
-}
-
-
-
-
+export const slugcats = ["survivor" ,"monk" , "hunter" ,"gourmand" ,"artificer","rivulet" ,"spearmaster" , "saint"] as const;
+export type Slugcat = typeof slugcats[number];
 type CollectibleType = "pearl" | "broadcast";
 export type Collectible = Pearl | Broadcast;
 
