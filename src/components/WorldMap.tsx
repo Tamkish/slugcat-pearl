@@ -1,5 +1,6 @@
 import {Slugcat} from "../model/types";
 import {regions} from "../data/regions";
+import { Point } from "../data/regionTypes";
 
 
 type WorldMapProps = {
@@ -8,6 +9,16 @@ type WorldMapProps = {
 
 }
 
+const shapeToPoints = (shape: Point[]) => {
+    let points:Point[] = [];
+    let lastPoint: Point = {x:0,y:0};
+    shape.forEach(shapePoint => {
+        let newPoint : Point = {x:lastPoint.x+shapePoint.x,y:lastPoint.y+shapePoint.y}
+        points.push(newPoint)
+        lastPoint = newPoint;
+    }); 
+    return points;
+}
 
 const WorldMap = ({selectedSlugcat}: WorldMapProps) => {
 
@@ -25,7 +36,7 @@ const WorldMap = ({selectedSlugcat}: WorldMapProps) => {
                             <polygon
                                 fill={region.bgColor}
                                 key={index}
-                                points={region.shape.map(point => `${point.x+region.position.x},${point.y+region.position.y}`).join(" ")}
+                                points={shapeToPoints(region.shape).map(point => `${point.x+region.position.x},${point.y+region.position.y}`).join(" ")}
                             />
                             <text
                                 x={region.position.x + region.textPosition.x}
